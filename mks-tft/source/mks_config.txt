@@ -1,0 +1,154 @@
+﻿### MKS-TFT display
+
+### Printer type setting
+
+# mainboard firmware setting(marlin:1; repetier:2; smoothie:3)
+>cfg_firmware_type:3
+
+# machine setting (Normal:1; Delta:2)
+>cfg_machine_type:1
+
+# baud rate setting(1:9600;2:57600;3:115200;4:250000)
+>cfg_baud_rate:4
+
+# language (Simplified Chinese:1; traditional Chinese:2; English:3)
+>cfg_language_type:3
+
+# extruder number(one:1; dual:2)
+>cfg_sprayer_counter:1
+
+# whether has heated bed(YES:1; NO: 0)
+>cfg_custom_bed_flag:1
+
+### Function settings
+
+# pause position (-1 is invalid; Z-axis is relative position)
+>cfg_XPOS:-1
+>cfg_YPOS:-1
+>cfg_ZADD:10
+
+# whether set machine auto-off after print finishes(auto-off:1; NO:0)
+>cfg_print_finish_close_Machine:0
+
+# the max target Temp of extruder and heatbed
+>cfg_max_sprayer_temperature:350
+>cfg_max_hotbed_temperature:90
+
+# the level signal of outage detection module PB1(low level:0; high level:1)
+>cfg_PB0_PB1_Level:1
+
+# the speed of filament change (mm/min)
+>cfg_filament_change_speed:1200
+
+# the length of filament change (mm)
+>cfg_filament_change_step:500
+
+# the min temperature of filament replacing
+>cfg_filament_limit_temperature:210
+
+# command for auto leveling (G29 is available for Marlin.While G32 is for  Repetier and Smoothieware)
+>cfg_auto_leveling_cmd:G28;G32;
+
+# number of points for manual leveling:(3,4,5 points available)
+>cfg_point_number:5
+
+# coordinates of 5 points of manual leveling
+>cfg_point1:10,10
+>cfg_point2:190,10
+>cfg_point3:190,190
+>cfg_point4:10,190
+>cfg_point5:100,100
+
+# moving speed of leveling (mm/min)
+>cfg_leveling_z_speed:1500
+>cfg_leveling_xy_speed:3000
+
+# breakpoints continued playing Z-axis error setting
+>cfg_breakpoint_z_error:0.2
+
+# wifi model(0:MKS WIFI TFT  1:MKS HLK-WIFI)
+>cfg_wifi_type:0
+
+# wifi mode(AP:1; STA:2)
+>cfg_wifi_mode:1
+
+# wifi name and password
+>cfg_wifi_ap_name:invalid
+>cfg_wifi_key_code:invalid
+
+# cloud service: 0:disable 1:enable
+>cfg_cloud_enable:0
+# cloud service adress
+>cfg_wifi_cloud_host:www.baizhongyun.cn
+# cloud service port
+>cfg_cloud_port:10086
+
+# dynamic address
+>cfg_ip_dhcp_flag:1
+
+# ip/mask/gateway
+>cfg_ip_address:192.168.3.100
+>cfg_ip_mask:255.255.255.0
+>cfg_ip_gate:192.168.3.1
+
+### Function customization
+
+# user-defined function 1 and 2.(disable: 0; enable: 1)
+>cfg_function_btn1_display:1
+>cfg_function_btn2_display:1
+
+# command of user-defined function
+>function_btn1_cmd:M84;
+>function_btn2_cmd:M81;
+
+# number of  "More" buttons 
+>moreitem_pic_cnt:7
+
+# command for 1~7 "More" button, each command must be separated by semicolon ";"
+>moreitem_button1_cmd:G28 X0;
+>moreitem_button2_cmd:G28 X0;
+>moreitem_button3_cmd:G28 Y0;
+>moreitem_button4_cmd:G28 Y0;
+>moreitem_button5_cmd:G28 Z0;
+>moreitem_button6_cmd:G28 Z0;
+>moreitem_button7_cmd:G28;
+
+# how many "More" button show on screen interface
+>morefunc_cnt:6
+
+# command setting on button1~6
+>morefunc1_cmd:G28;
+>morefunc2_cmd:G28;
+>morefunc3_cmd:G28;
+>morefunc4_cmd:G28;
+>morefunc5_cmd:G28;
+>morefunc6_cmd:G28;
+
+### Display customization(button and logo customized see User's Manual)
+
+# the color of screen background
+>cfg_background_color:0x000000
+
+# the color of title text
+>cfg_title_color:0xFFFFFF
+
+# the color of temperature,fan,(etc) background
+>cfg_state_background_color:0x000000
+
+# the color of temprature,fan,(etc) text
+>cfg_state_text_color:0xFFFFFF
+
+# the color of file button
+>cfg_filename_background_color:0x000000
+
+# the color of file text
+>cfg_filename_color:0xFFFFFF
+
+# the color of background in printing 
+>cfg_printingstat_word_background_color:0x000000
+
+# the color of text in printing status
+>cfg_printingstat_word_color:0xFFFFFF
+
+# 3D effects setting (disable: 0; enable: 1)
+>cfg_BUTTON_3D_effects:0
