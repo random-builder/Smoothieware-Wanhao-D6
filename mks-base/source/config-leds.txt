@@ -1,0 +1,37 @@
+
+## Switch module
+# http://smoothieware.org/switch
+
+# Switch module for leds display
+
+# LED1
+switch.leds_led1.enable                            true             # Enable this module
+switch.leds_led1.input_on_command                  M2011            # Command that will turn this switch on
+switch.leds_led1.input_off_command                 M2012            # Command that will turn this switch off
+switch.leds_led1.output_pin                        1.18             # Pin this module controls
+switch.leds_led1.output_type                       digital          # PWM output settable with S parameter in the input_on_comand
+switch.leds_led1.startup_state                     false            # Startup state of the switch. true => on
+
+# LED2
+switch.leds_led2.enable                            true             # Enable this module
+switch.leds_led2.input_on_command                  M2021            # Command that will turn this switch on
+switch.leds_led2.input_off_command                 M2022            # Command that will turn this switch off
+switch.leds_led2.output_pin                        1.19             # Pin this module controls
+switch.leds_led2.output_type                       digital          # PWM output settable with S parameter in the input_on_comand
+switch.leds_led2.startup_state                     false            # Startup state of the switch. true => on
+
+# LED3
+switch.leds_led3.enable                            true             # Enable this module
+switch.leds_led3.input_on_command                  M2031            # Command that will turn this switch on
+switch.leds_led3.input_off_command                 M2032            # Command that will turn this switch off
+switch.leds_led3.output_pin                        1.20             # Pin this module controls
+switch.leds_led3.output_type                       digital          # PWM output settable with S parameter in the input_on_comand
+switch.leds_led3.startup_state                     false            # Startup state of the switch. true => on
+
+# LED4
+switch.leds_led4.enable                            true             # Enable this module
+switch.leds_led4.input_on_command                  M2041            # Command that will turn this switch on
+switch.leds_led4.input_off_command                 M2042            # Command that will turn this switch off
+switch.leds_led4.output_pin                        1.21             # Pin this module controls
+switch.leds_led4.output_type                       digital          # PWM output settable with S parameter in the input_on_comand
+switch.leds_led4.startup_state                     false            # Startup state of the switch. true => on

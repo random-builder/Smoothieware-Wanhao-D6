@@ -9,7 +9,7 @@
 >cfg_machine_type:1
 
 # baud rate setting(1:9600;2:57600;3:115200;4:250000)
->cfg_baud_rate:4
+>cfg_baud_rate:3
 
 # language (Simplified Chinese:1; traditional Chinese:2; English:3)
 >cfg_language_type:3

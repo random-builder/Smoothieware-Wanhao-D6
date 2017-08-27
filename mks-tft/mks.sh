@@ -143,7 +143,7 @@ fi
 echo "# using folder: $folder"
 
 echo "# locate disk"
-readonly parse_text=$(lsblk -n -l -o name,label | grep $label) || true
+readonly parse_text=$(sudo lsblk -n -l -o name,label | grep $label) || true
 if [[ "$parse_text" == "" ]] ; then
     echo "# missing disk for label: $label"
     exit 1
@@ -200,7 +200,7 @@ echo "# erase disk"
 rm -r -f "$point"/*
 
 echo "# copy target"
-cp -a -r -f "$folder/target"/. "$point"/
+cp -r -f "$folder/target"/. "$point"/
 
 disk_umount
 

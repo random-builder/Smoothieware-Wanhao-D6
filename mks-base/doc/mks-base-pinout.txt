@@ -1,0 +1,74 @@
+
+# Board pin mapping
+
+# screw terminals
+Hot-bed   2.5
+Heater1   2.7
+Heater2   2.6
+FAN       2.4
+
+# sensor connector
+TH1   0.23
+TH2   0.24
+TH3   0.25
+TH4   0.26
+
+# J7 expansion header - SSP0 read external sensor
+1   5V
+2   NC
+3   GND
+4   ?.??    D0      SSP0-MISO [direct]
+5   ?.??    CS      SSP0-SSEL [direct]
+6   ?.??    CLK     SSP0-SCK  [direct]
+
+# J8 expansion header
+1   GND
+2   1.22    [direct] # spare
+3   1.23    [direct] # spare
+4   2.12    [direct] # kill button; free with: kill_button_enable
+5   2.11    [direct] # spare
+6   4.28    [direct] # PLAY_LED; free with: play_led_disable
+
+# EXP1 - external panel / lcd
+1   1.31 - Buzzer [direct]
+2   1.30 - Click button Pin [direct]
+3   0.18 - SPI0-MOSI [5v buf, output]: lcd; free with: panel.enable
+4   0.16 - SPI0-SSEL [5v buf, output]: lcd; free with: panel.enable
+5   0.17 - SPI0-MISO [5v buf, input]: lcd; free with: panel.enable
+6   NC
+7   NC
+8   NC
+9   GND
+10  5V
+
+# EXP2 - external panel / sd card, encoder
+1   0.8     SPI1-MISO [direct, input]: sdcard; can not free
+2   0.7     SPI1-SCK  [5v buf, output]:  sdcard; can not free
+3   3.25    Encoder Pin A [direct]
+4   0.28    SD select / I2C0-SCL [5v buf, output]
+5   3.36    Encoder Pin B [direct]
+6   0.9     SPI1-MOSI [5v buf, output]: sdcard; can not free
+7   0.27    SD detect / I2C0-SDA [direct]
+8   Reset   [direct]
+9   GND
+10  NC      ?.?? some 3.3v input/output
+
+# AUX1 - MKS-TFT link
+1   5V
+2   5V
+3   GND
+4   GND
+5   CTX     uart0
+6   TXD     uart0
+7   RTS     uart0
+8   RXD     uart0
+
+# J16 - external sd card -> 5v buffer connection
+"on"    connect
+"off"   disconnect
+
+# LEDS
+led1    D1      1.18
+led2    D2      1.19
+led3    D3      1.20
+led4    D4      1.21

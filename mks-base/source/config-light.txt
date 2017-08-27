@@ -1,0 +1,15 @@
+
+## Switch module
+# http://smoothieware.org/switch
+
+# Switch module for enclosure LED control
+# using Heater2 terminal block, pin 2.6 (software pwm, 500Hz)
+
+switch.light.enable                            true             # Enable this module
+switch.light.input_on_command                  M2091            # Command that will turn this switch on
+switch.light.input_off_command                 M2092            # Command that will turn this switch off
+switch.light.output_pin                        2.6              # Pin this module controls
+switch.light.output_type                       pwm              # PWM output settable with S parameter in the input_on_comand
+switch.light.startup_state                     true             # Startup state of the switch. true => on
+switch.light.startup_value                     127              # Startup value of the switch if the output_type is pwm
+switch.light.max_pwm                           255              # Set max pwm for the pin default is 255

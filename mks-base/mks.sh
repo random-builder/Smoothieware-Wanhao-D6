@@ -45,7 +45,7 @@ fi
 echo "# using folder: $folder"
 
 echo "# locate disk"
-readonly parse_text=$(lsblk -n -l -o name,label | grep $label) || true
+readonly parse_text=$(sudo lsblk -n -l -o name,label | grep $label) || true
 if [[ "$parse_text" == "" ]] ; then
     echo "# missing disk for label: $label"
     exit 1
@@ -81,4 +81,3 @@ cp -a -r -f "$folder/target"/. "$point"/
 disk_umount
 
 rm -r -f "$point"
-

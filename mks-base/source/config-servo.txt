@@ -1,0 +1,25 @@
+
+## Switch module
+# http://smoothieware.org/switch
+
+# Switch module for servo control
+
+# 5v buf output
+switch.servo1.enable                            true             # Enable this module
+switch.servo1.input_on_command                  M2111            # Command that will turn this switch on
+switch.servo1.input_off_command                 M2112            # Command that will turn this switch off
+switch.servo1.output_pin                        0.16             # Pin this module controls
+switch.servo1.output_type                       pwm              # PWM output settable with S parameter in the input_on_comand
+switch.servo1.startup_state                     true             # Startup state of the switch. true => on
+switch.servo1.startup_value                     10               # Startup value of the switch if the output_type is pwm
+switch.servo1.max_pwm                           255              # Set max pwm for the pin default is 255
+
+# 5v buf output
+switch.servo2.enable                            true             # Enable this module
+switch.servo2.input_on_command                  M2121            # Command that will turn this switch on
+switch.servo2.input_off_command                 M2122            # Command that will turn this switch off
+switch.servo2.output_pin                        0.18             # Pin this module controls
+switch.servo2.output_type                       pwm              # PWM output settable with S parameter in the input_on_comand
+switch.servo2.startup_state                     true             # Startup state of the switch. true => on
+switch.servo2.startup_value                     10               # Startup value of the switch if the output_type is pwm
+switch.servo2.max_pwm                           255              # Set max pwm for the pin default is 255

@@ -1,0 +1,27 @@
+
+## Extruder module configuration
+# See http://smoothieware.org/extruder
+extruder.hotend.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
+extruder.hotend.steps_per_mm                    830           # Steps per mm for extruder stepper
+extruder.hotend.default_feed_rate               600           # Default rate ( mm/minute ) for moves where only the extruder moves
+extruder.hotend.acceleration                    500           # Acceleration for the stepper motor mm/sec²
+extruder.hotend.max_speed                       50            # Maximum speed in mm/s
+
+extruder.hotend.step_pin                        2.3           # Pin for extruder step signal
+extruder.hotend.dir_pin                         0.22          # Pin for extruder dir signal ( add '!' to reverse direction )
+extruder.hotend.en_pin                          0.21          # Pin for extruder enable signal
+
+# Extruder offset
+#extruder.hotend.x_offset                        0            # X offset from origin in mm
+#extruder.hotend.y_offset                        0            # Y offset from origin in mm
+#extruder.hotend.z_offset                        0            # Z offset from origin in mm
+
+# Firmware retract settings when using G10/G11 
+extruder.hotend.retract_length                  3             # Retract length in mm
+extruder.hotend.retract_feedrate                45            # Retract feedrate in mm/sec
+extruder.hotend.retract_recover_length          0             # Additional length for recover
+extruder.hotend.retract_recover_feedrate        8             # Recover feedrate in mm/sec (should be less than retract feedrate)
+extruder.hotend.retract_zlift_length            0             # Z-lift on retract in mm, 0 disables
+extruder.hotend.retract_zlift_feedrate          6000          # Z-lift feedrate in mm/min (Note mm/min NOT mm/sec)
+
+delta_current                                   1.0           # First extruder stepper motor current

@@ -1,0 +1,18 @@
+
+## Network settings
+# See http://smoothieware.org/network
+network.enable                               false            # Enable the ethernet network services
+network.webserver.enable                     true             # Enable the webserver
+network.telnet.enable                        true             # Enable the telnet server
+network.ip_address                           auto             # Use dhcp to get ip address
+#network.ip_address                           192.168.3.222   # The IP address
+#network.ip_mask                              255.255.255.0   # The ip mask
+#network.ip_gateway                           192.168.3.1     # The gateway address
+#network.mac_override                         xx.xx.xx.xx.xx.xx  # Override the mac address, only do this if you have a conflict
+
+## Serial communications
+# For communication over the UART port with MKS-TFT
+uart0.baud_rate                              115200          # Baud rate for the default hardware serial port, must match to MKS-TFT
+
+# TODO
+second_usb_serial_enable                     false           # This enables a second USB serial port
