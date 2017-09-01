@@ -1,25 +1,31 @@
 
 # Board pin mapping
 
+# legend
+'X.XX'  port pin number
+'*'     3.3->5 v buffered line
+'buf 5v'    buffered connection
+'direct'    non buffered connection
+
 # screw terminals
-Hot-bed   2.5
-Heater1   2.7
-Heater2   2.6
-FAN       2.4
+Hot-bed   2.5   [mosfet]
+Heater1   2.7   [mosfet]
+Heater2   2.6   [mosfet]
+FAN       2.4   [mosfet]
 
 # sensor connector
-TH1   0.23
-TH2   0.24
-TH3   0.25
-TH4   0.26
+TH1   0.23  [direct], adc
+TH2   0.24  [direct], adc
+TH3   0.25  [direct], adc
+TH4   0.26  [direct], adc
 
 # J7 expansion header - SSP0 read external sensor
 1   5V
 2   NC
 3   GND
-4   ?.??    D0      SSP0-MISO [direct]
-5   ?.??    CS      SSP0-SSEL [direct]
-6   ?.??    CLK     SSP0-SCK  [direct]
+4   0.17    D0      SSP0-MISO [direct]
+5   0.16    CS      SSP0-SSEL [direct]
+6   0.15    CLK     SSP0-SCK  [direct]
 
 # J8 expansion header
 1   GND
@@ -30,11 +36,11 @@ TH4   0.26
 6   4.28    [direct] # PLAY_LED; free with: play_led_disable
 
 # EXP1 - external panel / lcd
-1   1.31 - Buzzer [direct]
-2   1.30 - Click button Pin [direct]
-3   0.18 - SPI0-MOSI [5v buf, output]: lcd; free with: panel.enable
-4   0.16 - SPI0-SSEL [5v buf, output]: lcd; free with: panel.enable
-5   0.17 - SPI0-MISO [5v buf, input]: lcd; free with: panel.enable
+1   1.31  - Buzzer [direct]
+2   1.30  - Click button Pin [direct]
+3   0.18* - SPI0-MOSI [5v buf, output]: lcd; free with: panel.enable
+4   0.16* - SPI0-SSEL [5v buf, output]: lcd; free with: panel.enable
+5   0.15* - SPI0-SCK  [5v buf, output]: lcd; free with: panel.enable
 6   NC
 7   NC
 8   NC
@@ -43,17 +49,17 @@ TH4   0.26
 
 # EXP2 - external panel / sd card, encoder
 1   0.8     SPI1-MISO [direct, input]: sdcard; can not free
-2   0.7     SPI1-SCK  [5v buf, output]:  sdcard; can not free
+2   0.7*    SPI1-SCK  [5v buf, output]:  sdcard; can not free
 3   3.25    Encoder Pin A [direct]
-4   0.28    SD select / I2C0-SCL [5v buf, output]
-5   3.36    Encoder Pin B [direct]
-6   0.9     SPI1-MOSI [5v buf, output]: sdcard; can not free
+4   0.28*   SD select / I2C0-SCL [5v buf, output]
+5   3.26    Encoder Pin B [direct]
+6   0.9*    SPI1-MOSI [5v buf, output]: sdcard; can not free
 7   0.27    SD detect / I2C0-SDA [direct]
 8   Reset   [direct]
 9   GND
 10  NC      ?.?? some 3.3v input/output
 
-# AUX1 - MKS-TFT link
+# AUX1 - MKS-TFT com port link
 1   5V
 2   5V
 3   GND
@@ -64,11 +70,18 @@ TH4   0.26
 8   RXD     uart0
 
 # J16 - external sd card -> 5v buffer connection
-"on"    connect
-"off"   disconnect
+# "on"    connect
+# "off"   disconnect
+# set to off
 
 # LEDS
 led1    D1      1.18
 led2    D2      1.19
 led3    D3      1.20
 led4    D4      1.21
+
+# J3 - microstepping
+# set "32" for 1/32
+
+# J4 - end stop power
+# set "3V3" for 3.3 volts

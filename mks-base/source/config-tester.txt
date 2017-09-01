@@ -4,3 +4,16 @@
 
 # Switch module for testing
 
+switch.filament.enable                  true
+
+switch.filament.input_pin               0.17
+switch.filament.input_pin_behavior      momentary
+switch.filament.input_type              digital
+switch.filament.input_on_command        M2001
+switch.filament.input_off_command       M2002
+
+#switch.filament.output_pin              nc
+#switch.filament.output_type             digital
+switch.filament.startup_state           true
+switch.filament.output_on_command       M2011
+switch.filament.output_off_command      M2012

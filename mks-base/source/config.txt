@@ -20,33 +20,40 @@ on_boot_gcode                         /sd/on_boot.gcode       # G-code file to p
 # http://smoothieware.org/currentcontrol
 currentcontrol_module_enable        true        # Control stepper motor current via the configuration file
 digipotchip                         mcp4451     # Select the digipot chip with which to control the current for the stepper motor drivers
-digipot_max_current                 2           # Maximum current that can be set
 digipot_factor                      113.33      # Factor for converting the current into digipot values
+digipot_max_current                 2           # Maximum current that can be set
 
 # Use custom leds mapping
 leds_disable                                 true             # Disable using leds after config loaded
 
 # Expansion header J7
-# not used
+# 0.16  used by EXP1
+# 0.17  free for use
+# 0.18  used by EXP1
 
 # Expansion header J8
 # http://smoothieware.org/killbutton
 # free up: play-led, kill-button
-play_led_disable                             true             # Disable the play led
+play_led_disable                             true             # Disable the play led 4.28
 kill_button_enable                           false            # Set to true to enable a kill button
 kill_button_pin                              2.12             # Kill button pin. default is same as pause button 2.12 (2.11 is another good choice)
+# 1.22
+# 1.23
+# 2.11  PROB
+# 2.12  FIEN
+# 4.28
 
 # Expansion socket EXP1 
 # free up: SPI0 pins 0.15 0.16 0.17 0.18
 panel.enable                false                  # Set to true to enable the panel interface
 panel.external_sd           false                  # Set to true if there is an external sd-card on the panel
-# THC*=1.30
-# SND*=1.31
-# SRV1=0.16
-# SRV2=0.18
+# 1.30  THC*
+# 1.31  SND*
+# 0.16* SRV1
+# 0.18* SRV2
 
 # Expansion socket EXP2
-# PWM1=3.25
-# PWM2=3.26
-# I2C0-SDA=0.27
-# I2C0-SCL=0.28
+# 3.25  PWM1
+# 3.26  PWM2
+# 0.27  I2C0-SDA
+# 0.28  I2C0-SCL

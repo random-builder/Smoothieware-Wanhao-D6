@@ -3,6 +3,7 @@
 # http://smoothieware.org/switch
 
 # Switch module for servo control
+# software PWM, 500 Hz
 
 # 5v buf output
 switch.servo1.enable                            true             # Enable this module
