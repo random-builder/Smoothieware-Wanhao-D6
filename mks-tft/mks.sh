@@ -10,37 +10,37 @@ readonly label="MKS-TFT"
 # sd-card mount folder
 readonly point="/tmp/$label"
 
-# firmware archive download
-readonly mks_url="https://github.com/random-builder/MKS-TFT/raw/master/Firmware/TFT%2028%2032English2.0.1.zip"
+# firmware archive download "TFT28_32_v3.0.3 Release file.zip"
+readonly mks_url="https://github.com/random-builder/MKS-TFT/raw/master/Firmware/TFT28_32_v3.0.3%20Release%20file.zip"
 
-# graphics folder inside archive
-readonly mks_profile="TFT 28 32English2.0.1/Red style/Simple"
+# resource folder inside archive
+readonly mks_profile="TFT28_32_v3.0.3 Release file/Examples/Classic_En_Red"
 
 # svg icon glyph library
 readonly glyph_url="https://github.com/random-builder/glyph-iconset/archive/master.zip"
 
-# graphics folder inside archive
+# resource folder inside archive
 readonly glyph_profile="glyph-iconset-master"
 
 # button, icon name and icon text configuration
 readonly icon_conf=(
 #   button      icon_name                           icon_text
-    "more       si-glyph-bolt                       MORE"   # in 'tools'
-    "custom1    si-glyph-fire                       ABORT"  # in 'more'
-    "custom2    si-glyph-layout-2                   STOP"   # in 'more'
-    "custom3    si-glyph-circle-triangle-right      PLAY"   # in 'more'
-    "custom4    si-glyph-two-arrow-down             BED"    # in 'more'
-    "custom5    si-glyph-thermometer                PLA"    # in 'more'
-    "custom6    si-glyph-thermometer                NYLON"  # in 'more'
-    "custom7    si-glyph-jump-page-up-down          LEVEL"  # in 'more'
-    "function1  si-glyph-fire                       FUN1"   # in 'set'
-    "function2  si-glyph-fire                       FUN2"   # in 'set'
-    "morefunc1  si-glyph-dice-1                     MOFU1"
-    "morefunc2  si-glyph-dice-2                     MOFU2"
-    "morefunc3  si-glyph-dice-3                     MOFU3"
-    "morefunc4  si-glyph-dice-4                     MOFU4"
-    "morefunc5  si-glyph-dice-5                     MOFU5"
-    "morefunc6  si-glyph-dice-6                     MOFU6"
+    "more       si-glyph-bolt                       MORE"   # in 'menu->tools'
+    "custom1    si-glyph-fire                       ABORT"  # in 'menu->more'
+    "custom2    si-glyph-layout-2                   STOP"   # in 'menu->more'
+    "custom3    si-glyph-circle-triangle-right      PLAY"   # in 'menu->more'
+    "custom4    si-glyph-two-arrow-down             BED"    # in 'menu->more'
+    "custom5    si-glyph-thermometer                PLA"    # in 'menu->more'
+    "custom6    si-glyph-thermometer                NYLON"  # in 'menu->more'
+    "custom7    si-glyph-jump-page-up-down          LEVEL"  # in 'menu->more'
+    "function1  si-glyph-fire                       FUN1"   # in 'menu->home'
+    "function2  si-glyph-fire                       FUN2"   # ???
+    "morefunc1  si-glyph-dice-1                     MOFU1"  # ???
+    "morefunc2  si-glyph-dice-2                     MOFU2"  # ???
+    "morefunc3  si-glyph-dice-3                     MOFU3"	# ???
+    "morefunc4  si-glyph-dice-4                     MOFU4"	# ???
+    "morefunc5  si-glyph-dice-5                     MOFU5"	# ???
+    "morefunc6  si-glyph-dice-6                     MOFU6"	# ???
 )
 
 # button template file name

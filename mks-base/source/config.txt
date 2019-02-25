@@ -4,34 +4,27 @@
 
 include config-connect.txt
 include config-extruder.txt
-include config-leds.txt
-include config-leveling.txt
-include config-light.txt
+#include config-leds.txt
+#include config-leveling.txt
+#include config-light.txt
 include config-motion.txt
-include config-servo.txt
-include config-temperature.txt
-include config-tester.txt
+#include config-servo.txt
+#include config-temperature.txt
+#include config-tester.txt
 
 # Boot actions
 on_boot_gcode_enable                  true                    # If set to true, play the on_boot_gcode file when the board boots
 on_boot_gcode                         /sd/on_boot.gcode       # G-code file to play when the board boots.
 
-# Motor current
-# http://smoothieware.org/currentcontrol
-currentcontrol_module_enable        true        # Control stepper motor current via the configuration file
-digipotchip                         mcp4451     # Select the digipot chip with which to control the current for the stepper motor drivers
-digipot_factor                      113.33      # Factor for converting the current into digipot values
-digipot_max_current                 2           # Maximum current that can be set
-
 # Use custom leds mapping
 leds_disable                                 true             # Disable using leds after config loaded
 
-# Expansion header J7
-# 0.16  used by EXP1
-# 0.17  free for use
-# 0.18  used by EXP1
+# Expansion header EXP0/J7
+# 0.16  used by EXP1 (non-buf)
+# 0.17  free for use (non-buf)
+# 0.18  used by EXP1 (non-buf)
 
-# Expansion header J8
+# Expansion header EXP0/J8
 # http://smoothieware.org/killbutton
 # free up: play-led, kill-button
 play_led_disable                             true             # Disable the play led 4.28
@@ -39,18 +32,18 @@ kill_button_enable                           false            # Set to true to e
 kill_button_pin                              2.12             # Kill button pin. default is same as pause button 2.12 (2.11 is another good choice)
 # 1.22
 # 1.23
-# 2.11  PROB
-# 2.12  FIEN
+# 2.11
+# 2.12
 # 4.28
 
 # Expansion socket EXP1 
 # free up: SPI0 pins 0.15 0.16 0.17 0.18
 panel.enable                false                  # Set to true to enable the panel interface
 panel.external_sd           false                  # Set to true if there is an external sd-card on the panel
-# 1.30  THC*
-# 1.31  SND*
-# 0.16* SRV1
-# 0.18* SRV2
+# 1.30  TEMP1*
+# 1.31  TEMP2*
+# 0.16* SRV1 (buf to 5V)
+# 0.18* SRV2 (buf to 5V)
 
 # Expansion socket EXP2
 # 3.25  PWM1

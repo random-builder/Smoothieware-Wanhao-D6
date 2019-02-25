@@ -15,4 +15,4 @@ which is converting 24V to 5V, and will not work on usb power only.
 
 must match mks-tft and mks-base uart0 baud rate
 
-board uses uni-directional 3.3v -> 5v and 5v-> 3.3v buffers
+board uses uni-directional 3.3v -> 5v and 5v-> 3.3v buffers on 0.15, 0.16, 0.17, 0.18

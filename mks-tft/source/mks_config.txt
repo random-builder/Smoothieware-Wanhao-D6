@@ -1,110 +1,155 @@
-﻿### MKS-TFT display
+﻿#--------------------------------------------------------------------
 
-### Printer type setting
+#########  Printer type setting  ##################################
 
-# mainboard firmware setting(marlin:1; repetier:2; smoothie:3)
->cfg_firmware_type:3
+#mainboard firmware setting(marlin:1; repetier:2; smoothie:3)
+>cfg_firmware_type:1
 
-# machine setting (Normal:1; Delta:2)
+#machine setting (Normal:1; Delta:2)
 >cfg_machine_type:1
 
-# baud rate setting(1:9600;2:57600;3:115200;4:250000)
->cfg_baud_rate:3
+#baud rate (9600:1; 57600:2; 115200:3; 250000:4)
+>cfg_baud_rate:4
 
-# language (Simplified Chinese:1; traditional Chinese:2; English:3)
+#multi-language (enable:1, disable:0). keep enabled, else no font
+>cfg_multiple_language:1
+
+#languages setting
+#(simplified Chinese:1; traditional Chinese:2; English:3; Russian:4; Spanish:5). This configuration is valid when "cfg_multiple_language" is disabled.
 >cfg_language_type:3
 
-# extruder number(one:1; dual:2)
->cfg_sprayer_counter:1
+#extruder number(one:1; dual:2)
+>cfg_sprayer_counter:2
 
-# whether has heated bed(YES:1; NO: 0)
+#enable heated bed(yes:1; no: 0)
 >cfg_custom_bed_flag:1
 
-### Function settings
+#the max target temp of extruder and heated bed
+>cfg_max_sprayer_temperature:340
+>cfg_max_hotbed_temperature:140
 
-# pause position (-1 is invalid; Z-axis is relative position)
+#pause position (-1 is invalid; Z-axis is relative position)
 >cfg_XPOS:-1
 >cfg_YPOS:-1
 >cfg_ZADD:10
 
-# whether set machine auto-off after print finishes(auto-off:1; NO:0)
+#-----------------------------------------------------------------------
+
+#########  Advanced Function Option  ##################################
+
+#enable UPS?(yes:1; no:0)
+>cfg_have_ups_device:0
+
+#enable power detecting module(mks 220det:1; mks pwc:0)
+>cfg_insert_det_module:0
+
+#enable auto off after print finish function (no:0; Yes:1)
 >cfg_print_finish_close_Machine:0
 
-# the max target Temp of extruder and heatbed
->cfg_max_sprayer_temperature:350
->cfg_max_hotbed_temperature:90
+#set PB0 signal when use it for sencond nozzle (high level:1; low level:0)
+>cfg_PB0_trigger_Level:0
 
-# the level signal of outage detection module PB1(low level:0; high level:1)
->cfg_PB0_PB1_Level:1
+#set PB1 signal (high level:1; low level:0)
+>cfg_PB1_trigger_Level:0
 
-# the speed of filament change (mm/min)
->cfg_filament_change_speed:1200
+#set error range of Z-axis on breakpoints recovery 
+>cfg_breakpoint_z_error:0.2
 
-# the length of filament change (mm)
->cfg_filament_change_step:500
+#---------------------------------------------------------------------------
 
-# the min temperature of filament replacing
->cfg_filament_limit_temperature:210
+#########  Filament Change Function  ##############################
 
-# command for auto leveling (G29 is available for Marlin.While G32 is for  Repetier and Smoothieware)
->cfg_auto_leveling_cmd:G28;G32;
+#the speed to extrude filament(mm/min)
+>cfg_filament_load_speed:1200
+#the lenght to extrude filament (mm)
+>cfg_filament_load_length:200
 
-# number of points for manual leveling:(3,4,5 points available)
->cfg_point_number:5
+#the speed to retract filament(mm/min)
+>cfg_filament_unload_speed:1200
+#the lenght to retract filament(mm)
+>cfg_filament_unload_length:200
 
-# coordinates of 5 points of manual leveling
+#It is the minimum temperature for filament change.
+It will auto heat up if the current temp doesn't reach the target.
+>cfg_filament_load_limit_temperature:260
+
+#---------------------------------------------------------------------------
+
+############  Leveling Function  ########################################
+
+#leveling mode(manual:0; auto:1; conceal leveling button:2)
+>cfg_leveling_mode:0
+
+#the command of auto leveling (G29 is available for Marlin. While G32 is for Repetier and Smoothieware)
+>cfg_auto_leveling_cmd:G32;
+
+#the point number of manual leveling:(3,4,5 point available)
+>cfg_point_number:4
+
+#the coordinates of 5 point on manual leveling
 >cfg_point1:10,10
 >cfg_point2:190,10
 >cfg_point3:190,190
 >cfg_point4:10,190
 >cfg_point5:100,100
 
-# moving speed of leveling (mm/min)
+#the travel speed of leveling(mm/min)
 >cfg_leveling_z_speed:1500
->cfg_leveling_xy_speed:3000
+>cfg_leveling_xy_speed:4500
 
-# breakpoints continued playing Z-axis error setting
->cfg_breakpoint_z_error:0.2
+#When the XY axis is moved manually, the height of the z-axis of the extruded Z axis from the origin (mm)
+#normally only needs to be reconfigured when the z axis is zero to the maximum under the smoothware firmware.
+> cfg_leveling_z_high: 5
 
-# wifi model(0:MKS WIFI TFT  1:MKS HLK-WIFI)
+#---------------------------------------------------------------------------
+ 
+#############  WIFI Function  ##########################################
+
+#wifi model(MKS WIFI TFT:0;  MKS HLK-WIFI:1)
 >cfg_wifi_type:0
 
-# wifi mode(AP:1; STA:2)
->cfg_wifi_mode:1
+#wifi mode(0:sta;1:ap)
+>cfg_wifi_mode:0
 
-# wifi name and password
->cfg_wifi_ap_name:invalid
->cfg_wifi_key_code:invalid
+#wifi name and password
+>cfg_wifi_ap_name:none
+>cfg_wifi_key_code:none
 
-# cloud service: 0:disable 1:enable
+#cloud service: 0:disable cloud service 1:enable cloud service
 >cfg_cloud_enable:0
-# cloud service adress
+#cloud service adress
 >cfg_wifi_cloud_host:www.baizhongyun.cn
-# cloud service port
+#cloud service port
 >cfg_cloud_port:10086
 
-# dynamic address
+#Dynamic access IP
 >cfg_ip_dhcp_flag:1
 
-# ip/mask/gateway
+#IP/mask/gateway
 >cfg_ip_address:192.168.3.100
 >cfg_ip_mask:255.255.255.0
 >cfg_ip_gate:192.168.3.1
 
-### Function customization
+#--------------------------------------------------------------------------------
 
-# user-defined function 1 and 2.(disable: 0; enable: 1)
+############## Function Customization #######################################
+
+#user-defined function 1 and 2. (display this button:  disable: 0; enable: 1)
+# works
 >cfg_function_btn1_display:1
+# missing feature
 >cfg_function_btn2_display:1
 
-# command of user-defined function
+#command of user-defined function
+# motor-off
 >function_btn1_cmd:M84;
+# ???
 >function_btn2_cmd:M81;
 
-# number of  "More" buttons 
+#set number of  "More" button 
 >moreitem_pic_cnt:7
 
-# command for 1~7 "More" button, each command must be separated by semicolon ";"
+#edit command for 1~7 "More" button,each command must be separated by semicolon ";"
 >moreitem_button1_cmd:G28 X0;
 >moreitem_button2_cmd:G28 X0;
 >moreitem_button3_cmd:G28 Y0;
@@ -113,10 +158,11 @@
 >moreitem_button6_cmd:G28 Z0;
 >moreitem_button7_cmd:G28;
 
-# how many "More" button show on screen interface
+#how many "More" button display on screen interface
 >morefunc_cnt:6
 
-# command setting on button1~6
+#command setting on button1~6
+# missing feature
 >morefunc1_cmd:G28;
 >morefunc2_cmd:G28;
 >morefunc3_cmd:G28;
@@ -124,31 +170,52 @@
 >morefunc5_cmd:G28;
 >morefunc6_cmd:G28;
 
-### Display customization(button and logo customized see User's Manual)
+#---------------------------------------------------------------------------------
 
-# the color of screen background
+##### Display Customization(button and logo customized see User's Manual) #######
+
+#the color of screen background
 >cfg_background_color:0x000000
 
-# the color of title text
+#the color of title text
 >cfg_title_color:0xFFFFFF
 
-# the color of temperature,fan,(etc) background
+#the color of temperature,fan,(etc) background
 >cfg_state_background_color:0x000000
 
-# the color of temprature,fan,(etc) text
+#the color of temprature,fan,(etc) text
 >cfg_state_text_color:0xFFFFFF
 
-# the color of file button
+#the color of file button
 >cfg_filename_background_color:0x000000
 
-# the color of file text
+#the color of file text
 >cfg_filename_color:0xFFFFFF
 
-# the color of background in printing 
+#the color of background in printing 
 >cfg_printingstat_word_background_color:0x000000
 
-# the color of text in printing status
+#the color of text in printing status
 >cfg_printingstat_word_color:0xFFFFFF
 
-# 3D effects setting (disable: 0; enable: 1)
+#3D effects setting (disable: 0; enable: 1)
 >cfg_BUTTON_3D_effects:0
+
+#The screen is flipped 180° (0x00: no flip, 0xEE: flip)
+>cfg_OVERTURN_180:0x00
+
+#shield the function of detection power (0:no shield ,1:shield)
+>cfg_disable_PWR_det:0
+
+#shield the function of detection filament (0:no shield ,1:shield)
+>cfg_disable_MT_det:0
+
+#Whether to support the function of dual extruder single nozzle.(0: disable, 1: enable)
+#the extruder number need set to dual.
+>cfg_single_nozzle:0
+
+#For the M110 command plus check, the version of Marlin 1.0.2 and below is set to 1, and the other versions are set to 0.
+>cfg_M110_add_checkSum:0
+
+#Enable function of display error message. (no:0; Yes:1)
+>cfg_display_eeror_message:1

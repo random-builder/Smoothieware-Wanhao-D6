@@ -7,19 +7,34 @@
 'buf 5v'    buffered connection
 'direct'    non buffered connection
 
-# screw terminals
+# pin sequence convention
+* J2: has numbers on board
+* AUX1, EXP1, EXP2,  : idc standard, "one" is v-mark
+* J7: "one" is square pad: away from label J7 (5V on board)
+* J8: "one" is square pad: next   to label J8 (GND on board)
+
+# J2 programmer
+1 TMS
+2 3.3V  X3V3 off-board
+3 TCK
+4 GND   X3V3 off-board
+5 TRST
+6 GND
+
+# screw terminals: J4, J5, J6
 Hot-bed   2.5   [mosfet]
 Heater1   2.7   [mosfet]
 Heater2   2.6   [mosfet]
 FAN       2.4   [mosfet]
 
-# sensor connector
+# sensor connector JST-2
+* "+" is square pad, "-" is GND
 TH1   0.23  [direct], adc
 TH2   0.24  [direct], adc
 TH3   0.25  [direct], adc
 TH4   0.26  [direct], adc
 
-# J7 expansion header - SSP0 read external sensor
+# J7 1x6 expansion header - SSP0 read external sensor
 1   5V
 2   NC
 3   GND
@@ -27,7 +42,7 @@ TH4   0.26  [direct], adc
 5   0.16    CS      SSP0-SSEL [direct]
 6   0.15    CLK     SSP0-SCK  [direct]
 
-# J8 expansion header
+# J8 1x6 expansion header - random configurable pins
 1   GND
 2   1.22    [direct] # spare
 3   1.23    [direct] # spare
@@ -35,41 +50,41 @@ TH4   0.26  [direct], adc
 5   2.11    [direct] # spare
 6   4.28    [direct] # PLAY_LED; free with: play_led_disable
 
-# EXP1 - external panel / lcd
-1   1.31  - Buzzer [direct]
-2   1.30  - Click button Pin [direct]
-3   0.18* - SPI0-MOSI [5v buf, output]: lcd; free with: panel.enable
-4   0.16* - SPI0-SSEL [5v buf, output]: lcd; free with: panel.enable
-5   0.15* - SPI0-SCK  [5v buf, output]: lcd; free with: panel.enable
-6   NC
-7   NC
-8   NC
-9   GND
-10  5V
+# EXP1 IDC 2x5 - external panel / lcd
+1   5V
+2   GND
+3   NC
+4   NC
+5   NC
+6   0.15* - SPI0-SCK  [5v buf, output]: lcd; free with: panel.enable
+7   0.16* - SPI0-SSEL [5v buf, output]: lcd; free with: panel.enable
+8   0.18* - SPI0-MOSI [5v buf, output]: lcd; free with: panel.enable
+9   1.30  - Click button pin [direct]
+10  1.31  - Buzzer output pin [direct]
 
-# EXP2 - external panel / sd card, encoder
-1   0.8     SPI1-MISO [direct, input]: sdcard; can not free
-2   0.7*    SPI1-SCK  [5v buf, output]:  sdcard; can not free
-3   3.25    Encoder Pin A [direct]
-4   0.28*   SD select / I2C0-SCL [5v buf, output]
-5   3.26    Encoder Pin B [direct]
-6   0.9*    SPI1-MOSI [5v buf, output]: sdcard; can not free
-7   0.27    SD detect / I2C0-SDA [direct]
-8   Reset   [direct]
-9   GND
-10  NC      ?.?? some 3.3v input/output
+# EXP2 IDC 2x5 - external panel / sd card, input encoder
+1   NC      ?.?? some 3.3v input/output
+2   GND
+3   Reset   [direct]
+4   0.27    SD detect / I2C0-SDA [direct]
+5   0.9*    SPI1-MOSI [5v buf, output]: sdcard; can not free
+6   3.26    Encoder Pin B [direct]
+7   0.28*   SD select / I2C0-SCL [5v buf, output]
+8   3.25    Encoder Pin A [direct]
+9   0.7*    SPI1-SCK  [5v buf, output]:  sdcard; can not free
+10  0.8     SPI1-MISO [direct, input]: sdcard; can not free
 
-# AUX1 - MKS-TFT com port link
+# AUX1 IDC 2x4 - MKS-TFT serial link
 1   5V
 2   5V
 3   GND
 4   GND
-5   CTX     uart0
+5   NC
 6   TXD     uart0
-7   RTS     uart0
+7   NC
 8   RXD     uart0
 
-# J16 - external sd card -> 5v buffer connection
+# J16 1x4 microswitch - external sd card -> 5v buffer connection
 # "on"    connect
 # "off"   disconnect
 # set to off
@@ -80,8 +95,14 @@ led2    D2      1.19
 led3    D3      1.20
 led4    D4      1.21
 
-# J3 - microstepping
+# J3 - microstepping mode
 # set "32" for 1/32
 
-# J4 - end stop power
+# J4 - end stop power level
 # set "3V3" for 3.3 volts
+
+# motor JST-4 X Y Z E0 E1 connectors
+1   1B  coil 1 (-)  
+2   1A  coil 1 (+)
+3   2A  coil 2 (+)
+4   2B  coil 2 (-)
