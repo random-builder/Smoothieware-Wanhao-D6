@@ -22,11 +22,14 @@ mm_max_arc_error                             0.01             # The maximum erro
 # Arm solution configuration : Cartesian robot. Translates mm positions into stepper positions
 # See http://smoothieware.org/stepper-motors
 # See https://www.prusaprinters.org/calculator
+
 # 2mm belt; 20 tooth; 200 steps/revol; 1/32 microsteps;
 alpha_steps_per_mm                           160              # Steps per mm for alpha ( X ) stepper
+
 # 2mm belt; 20 tooth; 200 steps/revol; 1/32 microsteps;
 beta_steps_per_mm                            160              # Steps per mm for beta ( Y ) stepper
-# 4 mm lead; 1:1 gear; 200 steps/revol; 1/32 microsteps;
+
+# 4mm lead; 1:1 gear; 200 steps/revol; 1/32 microsteps;
 gamma_steps_per_mm                           1600             # Steps per mm for gamma ( Z ) stepper
 
 # Planner module configuration : Look-ahead and acceleration configuration
@@ -109,8 +112,8 @@ alpha_slow_homing_rate_mm_s                  10               # Alpha/X slow hom
 beta_fast_homing_rate_mm_s                   50               # Beta/Y  fast homing feedrate in mm/second
 beta_slow_homing_rate_mm_s                   10               # Beta/Y  slow homing feedrate in mm/second
 #
-gamma_fast_homing_rate_mm_s                  10               # Gamma/Z fast homing feedrate in mm/second
-gamma_slow_homing_rate_mm_s                  2                # Gamma/Z slow homing feedrate in mm/second
+gamma_fast_homing_rate_mm_s                  15               # Gamma/Z fast homing feedrate in mm/second
+gamma_slow_homing_rate_mm_s                  3                # Gamma/Z slow homing feedrate in mm/second
 
 alpha_homing_retract_mm                      5                # Distance to retract from the endstop after it is hit for alpha/X
 beta_homing_retract_mm                       5                # Distance to retract from the endstop after it is hit for beta/Y

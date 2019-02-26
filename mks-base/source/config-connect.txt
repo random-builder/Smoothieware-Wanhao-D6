@@ -11,7 +11,7 @@ network.ip_address                           auto             # Use dhcp to get 
 #network.mac_override                         xx.xx.xx.xx.xx.xx  # Override the mac address, only do this if you have a conflict
 
 ## Serial communications
-# For communication over the UART port with MKS-TFT
+# For communication over the UART port with MKS-TFT via AUX-1
 uart0.baud_rate                              250000          # Baud rate for the default hardware serial port, must match to MKS-TFT
 
 # TODO

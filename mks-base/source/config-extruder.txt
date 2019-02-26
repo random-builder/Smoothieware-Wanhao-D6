@@ -2,43 +2,19 @@
 ## Extruder module configuration
 # See http://smoothieware.org/extruder
 
-### first extruder
+# steps per mm:
+# https://www.bondtech.se/en/product/bmg-extruder/
+# rate = 830 step/mm for 32 microstepping
 
-delta_current                               1.0           # First extruder stepper motor current
+### extruder one
 
-extruder.E0.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
-
-extruder.E0.step_pin                        2.3           # Pin for extruder step signal
-extruder.E0.dir_pin                         0.22          # Pin for extruder dir signal ( add '!' to reverse direction )
-extruder.E0.en_pin                          0.21          # Pin for extruder enable signal
-
-extruder.E0.steps_per_mm                    830           # Steps per mm for extruder stepper
-extruder.E0.default_feed_rate               600           # Default rate ( mm/minute ) for moves where only the extruder moves
-extruder.E0.acceleration                    500           # Acceleration for the stepper motor mm/sec²
-extruder.E0.max_speed                       50            # Maximum speed in mm/s
-
-# Extruder offset
-#extruder.E0.x_offset                        0            # X offset from origin in mm
-#extruder.E0.y_offset                        0            # Y offset from origin in mm
-#extruder.E0.z_offset                        0            # Z offset from origin in mm
-
-# Firmware retract settings when using G10/G11 
-extruder.E0.retract_length                  3             # Retract length in mm
-extruder.E0.retract_feedrate                45            # Retract feedrate in mm/sec
-extruder.E0.retract_recover_length          0             # Additional length for recover
-extruder.E0.retract_recover_feedrate        8             # Recover feedrate in mm/sec (should be less than retract feedrate)
-extruder.E0.retract_zlift_length            0             # Z-lift on retract in mm, 0 disables
-extruder.E0.retract_zlift_feedrate          6000          # Z-lift feedrate in mm/min (Note mm/min NOT mm/sec)
-
-### second extruder
-
-epsilon_current                             1.0           # Second extruder stepper motor current
+delta_current                               0.8           # First extruder stepper motor current
 
 extruder.E1.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
 
-extruder.E1.step_pin                        2.8           # Pin for extruder step signal
-extruder.E1.dir_pin                         0.13          # Pin for extruder dir signal ( add '!' to reverse direction )
-extruder.E1.en_pin                          4.29          # Pin for extruder enable signal
+extruder.E1.step_pin                        2.3           # Pin for extruder step signal
+extruder.E1.dir_pin                         0.22          # Pin for extruder dir signal ( add '!' to reverse direction )
+extruder.E1.en_pin                          0.21          # Pin for extruder enable signal
 
 extruder.E1.steps_per_mm                    830           # Steps per mm for extruder stepper
 extruder.E1.default_feed_rate               600           # Default rate ( mm/minute ) for moves where only the extruder moves
@@ -46,9 +22,9 @@ extruder.E1.acceleration                    500           # Acceleration for the
 extruder.E1.max_speed                       50            # Maximum speed in mm/s
 
 # Extruder offset
-#extruder.E1.x_offset                        0            # X offset from origin in mm
-#extruder.E1.y_offset                        0            # Y offset from origin in mm
-#extruder.E1.z_offset                        0            # Z offset from origin in mm
+extruder.E1.x_offset                        0             # X offset from origin in mm
+extruder.E1.y_offset                        0             # Y offset from origin in mm
+extruder.E1.z_offset                        0             # Z offset from origin in mm
 
 # Firmware retract settings when using G10/G11 
 extruder.E1.retract_length                  3             # Retract length in mm
@@ -57,3 +33,31 @@ extruder.E1.retract_recover_length          0             # Additional length fo
 extruder.E1.retract_recover_feedrate        8             # Recover feedrate in mm/sec (should be less than retract feedrate)
 extruder.E1.retract_zlift_length            0             # Z-lift on retract in mm, 0 disables
 extruder.E1.retract_zlift_feedrate          6000          # Z-lift feedrate in mm/min (Note mm/min NOT mm/sec)
+
+### extruder two
+
+epsilon_current                             0.8           # Second extruder stepper motor current
+
+extruder.E2.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
+
+extruder.E2.step_pin                        2.8           # Pin for extruder step signal
+extruder.E2.dir_pin                         0.13          # Pin for extruder dir signal ( add '!' to reverse direction )
+extruder.E2.en_pin                          4.29          # Pin for extruder enable signal
+
+extruder.E2.steps_per_mm                    830           # Steps per mm for extruder stepper
+extruder.E2.default_feed_rate               600           # Default rate ( mm/minute ) for moves where only the extruder moves
+extruder.E2.acceleration                    500           # Acceleration for the stepper motor mm/sec²
+extruder.E2.max_speed                       50            # Maximum speed in mm/s
+
+# Extruder offset
+extruder.E2.x_offset                        0             # X offset from origin in mm
+extruder.E2.y_offset                        0             # Y offset from origin in mm
+extruder.E2.z_offset                        0             # Z offset from origin in mm
+
+# Firmware retract settings when using G10/G11 
+extruder.E2.retract_length                  3             # Retract length in mm
+extruder.E2.retract_feedrate                45            # Retract feedrate in mm/sec
+extruder.E2.retract_recover_length          0             # Additional length for recover
+extruder.E2.retract_recover_feedrate        8             # Recover feedrate in mm/sec (should be less than retract feedrate)
+extruder.E2.retract_zlift_length            0             # Z-lift on retract in mm, 0 disables
+extruder.E2.retract_zlift_feedrate          6000          # Z-lift feedrate in mm/min (Note mm/min NOT mm/sec)

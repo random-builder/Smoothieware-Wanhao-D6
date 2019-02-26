@@ -9,7 +9,7 @@ include config-extruder.txt
 #include config-light.txt
 include config-motion.txt
 #include config-servo.txt
-#include config-temperature.txt
+include config-temperature.txt
 #include config-tester.txt
 
 # Boot actions
@@ -19,12 +19,12 @@ on_boot_gcode                         /sd/on_boot.gcode       # G-code file to p
 # Use custom leds mapping
 leds_disable                                 true             # Disable using leds after config loaded
 
-# Expansion header EXP0/J7
+# Expansion header J7 (EXP/SIG)
 # 0.16  used by EXP1 (non-buf)
 # 0.17  free for use (non-buf)
 # 0.18  used by EXP1 (non-buf)
 
-# Expansion header EXP0/J8
+# Expansion header J8 (EXP/SIG)
 # http://smoothieware.org/killbutton
 # free up: play-led, kill-button
 play_led_disable                             true             # Disable the play led 4.28
@@ -40,8 +40,8 @@ kill_button_pin                              2.12             # Kill button pin.
 # free up: SPI0 pins 0.15 0.16 0.17 0.18
 panel.enable                false                  # Set to true to enable the panel interface
 panel.external_sd           false                  # Set to true if there is an external sd-card on the panel
-# 1.30  TEMP1*
-# 1.31  TEMP2*
+# 1.30  TEMP1
+# 1.31  TEMP2
 # 0.16* SRV1 (buf to 5V)
 # 0.18* SRV2 (buf to 5V)
 

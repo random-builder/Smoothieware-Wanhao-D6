@@ -3,25 +3,28 @@
 #########  Printer type setting  ##################################
 
 #mainboard firmware setting(marlin:1; repetier:2; smoothie:3)
+# use marlin, less panel bugs
 >cfg_firmware_type:1
 
 #machine setting (Normal:1; Delta:2)
 >cfg_machine_type:1
 
 #baud rate (9600:1; 57600:2; 115200:3; 250000:4)
+# keep same 250000 as mks-base
 >cfg_baud_rate:4
 
-#multi-language (enable:1, disable:0). keep enabled, else no font
+#multi-language (enable:1, disable:0). 
+# keep enabled, else no font
 >cfg_multiple_language:1
 
 #languages setting
 #(simplified Chinese:1; traditional Chinese:2; English:3; Russian:4; Spanish:5). This configuration is valid when "cfg_multiple_language" is disabled.
 >cfg_language_type:3
 
-#extruder number(one:1; dual:2)
+#extruder number (one:1; dual:2)
 >cfg_sprayer_counter:2
 
-#enable heated bed(yes:1; no: 0)
+#enable heated bed (yes:1; no: 0)
 >cfg_custom_bed_flag:1
 
 #the max target temp of extruder and heated bed
@@ -37,10 +40,10 @@
 
 #########  Advanced Function Option  ##################################
 
-#enable UPS?(yes:1; no:0)
+#enable UPS? (yes:1; no:0)
 >cfg_have_ups_device:0
 
-#enable power detecting module(mks 220det:1; mks pwc:0)
+#enable power detecting module (mks 220det:1; mks pwc:0)
 >cfg_insert_det_module:0
 
 #enable auto off after print finish function (no:0; Yes:1)
@@ -137,13 +140,13 @@ It will auto heat up if the current temp doesn't reach the target.
 #user-defined function 1 and 2. (display this button:  disable: 0; enable: 1)
 # works
 >cfg_function_btn1_display:1
-# missing feature
+# missing feature?
 >cfg_function_btn2_display:1
 
 #command of user-defined function
-# motor-off
+# "motor-off", can not customize?
 >function_btn1_cmd:M84;
-# ???
+# missing feature?
 >function_btn2_cmd:M81;
 
 #set number of  "More" button 
@@ -172,7 +175,7 @@ It will auto heat up if the current temp doesn't reach the target.
 
 #---------------------------------------------------------------------------------
 
-##### Display Customization(button and logo customized see User's Manual) #######
+##### Display Customization (button and logo customized see User's Manual) #######
 
 #the color of screen background
 >cfg_background_color:0x000000
