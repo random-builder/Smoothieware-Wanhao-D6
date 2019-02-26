@@ -4,7 +4,7 @@
 
 #################
 
-# Hot plate configuration
+# Hot plate E0 configuration
 temperature_control.bed.enable               true            # Whether to activate this module at all.
 temperature_control.bed.thermistor_pin       0.23 # TH1      # Pin for the thermistor to read
 temperature_control.bed.heater_pin           2.5             # Pin that controls the heater
@@ -17,6 +17,8 @@ temperature_control.bed.designator           B               # Designator letter
 # See http://smoothieware.org/temperaturecontrol#bang-bang
 #temperature_control.bed.bang_bang           false           # Set to true to use bang bang control rather than PID
 #temperature_control.bed.hysteresis          2.0             # Set to the temperature in degrees C to use as hysteresis
+
+# auto-tune: M303 E0 S100 # http://smoothieware.org/temperaturecontrol-pid-autotuning
 
 #################
 
@@ -39,6 +41,7 @@ temperature_control.E1.runaway_range                20   # How far from the set 
 
 # PID configuration 
 # See http://smoothieware.org/temperaturecontrol#pid
+# auto-tune: M303 E1 S250 # http://smoothieware.org/temperaturecontrol-pid-autotuning
 temperature_control.E1.p_factor         13.7            # P ( proportional ) factor
 temperature_control.E1.i_factor         0.097           # I ( integral ) factor
 temperature_control.E1.d_factor         24              # D ( derivative ) factor
@@ -64,6 +67,7 @@ temperature_control.E2.runaway_range                20   # How far from the set 
 
 # PID configuration 
 # See http://smoothieware.org/temperaturecontrol#pid
+# auto-tune: M303 E2 S250 # http://smoothieware.org/temperaturecontrol-pid-autotuning
 temperature_control.E2.p_factor         13.7            # P ( proportional ) factor
 temperature_control.E2.i_factor         0.097           # I ( integral ) factor
 temperature_control.E2.d_factor         24              # D ( derivative ) factor

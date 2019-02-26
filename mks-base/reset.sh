@@ -2,23 +2,26 @@
 
 # smooth reboot script
 
-# $PORT
-SET LINE \%1
-IF FAIL EXIT 1 "invalid port"
+# $port
+set line \%1
+if fail exit 1 "invalid port"
 
-# $RATE
-SET SPEED \%2
-SET SERIAL 8N1
-SET FLOW-CONTROL NONE
-SET CARRIER-WATCH OFF
-SET MODEM TYPE NONE
+# $rate
+set speed \%2
+set serial 8n1
+set flow-control none
+set carrier-watch off
+set modem type none
 
-INPUT 5 "ok"
+# monitor progress
+set input echo on
 
-LINEOUT "reset"
+# issue reset
+input 10 "ok"
+lineout "reset"
+input 10 "booting"
 
-INPUT 5 "booting"
+# wait for reboot
+sleep 10
 
-SLEEP 5
-
-EXIT
+exit 0
