@@ -38,7 +38,7 @@
 
 	<!-- insert single line of icon text -->
 	<text x="0" y="0" text-anchor="middle">
-		<tspan x="39" y="93" class="button-text">NYLON</tspan>
+		<tspan x="39" y="93" class="button-text">HI</tspan>
 	</text>
 
 </svg>

@@ -2,15 +2,15 @@
 
 #########  Printer type setting  ##################################
 
-#mainboard firmware setting(marlin:1; repetier:2; smoothie:3)
-# use marlin, less panel bugs
+#mainboard firmware setting (marlin:1; repetier:2; smoothie:3)
+# use marlin, less bugs in panel s/w
 >cfg_firmware_type:1
 
 #machine setting (Normal:1; Delta:2)
 >cfg_machine_type:1
 
 #baud rate (9600:1; 57600:2; 115200:3; 250000:4)
-# keep same 250000 as mks-base
+# keep same as mks-base
 >cfg_baud_rate:4
 
 #multi-language (enable:1, disable:0). 
@@ -28,8 +28,8 @@
 >cfg_custom_bed_flag:1
 
 #the max target temp of extruder and heated bed
->cfg_max_sprayer_temperature:340
->cfg_max_hotbed_temperature:140
+>cfg_max_sprayer_temperature:350
+>cfg_max_hotbed_temperature:150
 
 #pause position (-1 is invalid; Z-axis is relative position)
 >cfg_XPOS:-1
@@ -63,18 +63,18 @@
 #########  Filament Change Function  ##############################
 
 #the speed to extrude filament(mm/min)
->cfg_filament_load_speed:1200
+>cfg_filament_load_speed:3600
 #the lenght to extrude filament (mm)
->cfg_filament_load_length:200
+>cfg_filament_load_length:450
 
 #the speed to retract filament(mm/min)
->cfg_filament_unload_speed:1200
+>cfg_filament_unload_speed:3600
 #the lenght to retract filament(mm)
->cfg_filament_unload_length:200
+>cfg_filament_unload_length:450
 
 #It is the minimum temperature for filament change.
 It will auto heat up if the current temp doesn't reach the target.
->cfg_filament_load_limit_temperature:260
+>cfg_filament_load_limit_temperature:250
 
 #---------------------------------------------------------------------------
 
@@ -87,22 +87,34 @@ It will auto heat up if the current temp doesn't reach the target.
 >cfg_auto_leveling_cmd:G32;
 
 #the point number of manual leveling:(3,4,5 point available)
->cfg_point_number:4
+>cfg_point_number:5
 
 #the coordinates of 5 point on manual leveling
->cfg_point1:10,10
->cfg_point2:190,10
->cfg_point3:190,190
->cfg_point4:10,190
+#
+# picture1: "upper/left"
+>cfg_point1:010,190
+#
+# picture2: "upper/right"
+>cfg_point2:190,190
+#
+# picture3: "lower/right"
+>cfg_point3:190,010
+#
+# picture4: "lower/left"
+>cfg_point4:010,010
+#
+# picture: "center/center"
 >cfg_point5:100,100
 
 #the travel speed of leveling(mm/min)
->cfg_leveling_z_speed:1500
->cfg_leveling_xy_speed:4500
+# 10mm/sec * 60sec, must match smoothieware/default_seek_rate
+>cfg_leveling_z_speed:600
+# 60mm/sec * 60sec, can be faster then smoothieware/default_seek_rate  
+>cfg_leveling_xy_speed:3600
 
 #When the XY axis is moved manually, the height of the z-axis of the extruded Z axis from the origin (mm)
 #normally only needs to be reconfigured when the z axis is zero to the maximum under the smoothware firmware.
-> cfg_leveling_z_high: 5
+>cfg_leveling_z_high: 5
 
 #---------------------------------------------------------------------------
  
@@ -138,34 +150,45 @@ It will auto heat up if the current temp doesn't reach the target.
 ############## Function Customization #######################################
 
 #user-defined function 1 and 2. (display this button:  disable: 0; enable: 1)
-# works
+#
+# works, in menu->home
 >cfg_function_btn1_display:1
+#
 # missing feature?
 >cfg_function_btn2_display:1
 
 #command of user-defined function
+#
 # "motor-off", can not customize?
->function_btn1_cmd:M84;
+>function_btn1_cmd:M84;M104 S0 T0;M140 S0 T0;M104 S0 T1;M140 S0 T1;
+#
 # missing feature?
 >function_btn2_cmd:M81;
 
 #set number of  "More" button 
 >moreitem_pic_cnt:7
 
-#edit command for 1~7 "More" button,each command must be separated by semicolon ";"
->moreitem_button1_cmd:G28 X0;
->moreitem_button2_cmd:G28 X0;
->moreitem_button3_cmd:G28 Y0;
->moreitem_button4_cmd:G28 Y0;
->moreitem_button5_cmd:G28 Z0;
->moreitem_button6_cmd:G28 Z0;
+#edit command for 1~7 "More" button, each command must be separated by semicolon ";"
+# reboot smoothieware
+>moreitem_button1_cmd:reset;
+# print suspend
+>moreitem_button2_cmd:G28;
+# print resume
+>moreitem_button3_cmd:G28;
+# lower bed
+>moreitem_button4_cmd:G90;G1 Z180 F3600;
+# temp/lo
+>moreitem_button5_cmd:M104 S190;M140 S50;
+# temp/hi
+>moreitem_button6_cmd:M104 S260;M140 S100;
+# auto level
 >moreitem_button7_cmd:G28;
 
 #how many "More" button display on screen interface
 >morefunc_cnt:6
 
 #command setting on button1~6
-# missing feature
+# missing feature?
 >morefunc1_cmd:G28;
 >morefunc2_cmd:G28;
 >morefunc3_cmd:G28;
