@@ -37,13 +37,14 @@ readonly icon_conf=(
     "custom7    si-glyph-jump-page-up-down          LEVEL"   # in 'menu->more'
 #    
     "function1  si-glyph-turn-off                   X"       # in 'menu->home'
-    "function2  si-glyph-fire                       FUN2"    # ???
-    "morefunc1  si-glyph-dice-1                     MOFU1"   # ???
-    "morefunc2  si-glyph-dice-2                     MOFU2"   # ???
-    "morefunc3  si-glyph-dice-3                     MOFU3"	 # ???
-    "morefunc4  si-glyph-dice-4                     MOFU4"	 # ???
-    "morefunc5  si-glyph-dice-5                     MOFU5"	 # ???
-    "morefunc6  si-glyph-dice-6                     MOFU6"	 # ???
+# missing feature
+#    "function2  si-glyph-fire                       FUN2"    # ???
+#    "morefunc1  si-glyph-dice-1                     MOFU1"   # ???
+#    "morefunc2  si-glyph-dice-2                     MOFU2"   # ???
+#    "morefunc3  si-glyph-dice-3                     MOFU3"	 # ???
+#    "morefunc4  si-glyph-dice-4                     MOFU4"	 # ???
+#    "morefunc5  si-glyph-dice-5                     MOFU5"	 # ???
+#    "morefunc6  si-glyph-dice-6                     MOFU6"	 # ???
 )
 
 # button template file name

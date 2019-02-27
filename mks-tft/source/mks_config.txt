@@ -107,14 +107,16 @@ It will auto heat up if the current temp doesn't reach the target.
 >cfg_point5:100,100
 
 #the travel speed of leveling(mm/min)
-# 10mm/sec * 60sec, must match smoothieware/default_seek_rate
->cfg_leveling_z_speed:600
-# 60mm/sec * 60sec, can be faster then smoothieware/default_seek_rate  
->cfg_leveling_xy_speed:3600
+# note: mks+smoothieware bug:
+# mks issues G1 w/o F, forcing to use "last used rate"
+# while smoothieware uses same "last" for Z as for XY
+# workaround: keep z and xy to the same stable maximum speed
+>cfg_leveling_z_speed:1200
+>cfg_leveling_xy_speed:1200
 
 #When the XY axis is moved manually, the height of the z-axis of the extruded Z axis from the origin (mm)
 #normally only needs to be reconfigured when the z axis is zero to the maximum under the smoothware firmware.
->cfg_leveling_z_high: 5
+>cfg_leveling_z_high: 2
 
 #---------------------------------------------------------------------------
  
@@ -175,8 +177,8 @@ It will auto heat up if the current temp doesn't reach the target.
 >moreitem_button2_cmd:G28;
 # print resume
 >moreitem_button3_cmd:G28;
-# lower bed
->moreitem_button4_cmd:G90;G1 Z180 F3600;
+# lower bed (15 mm/sec)
+>moreitem_button4_cmd:G90;G1 Z160 F900;
 # temp/lo
 >moreitem_button5_cmd:M104 S190;M140 S50;
 # temp/hi

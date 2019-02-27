@@ -8,7 +8,7 @@
 
 ### extruder one
 
-delta_current                               0.8           # First extruder stepper motor current
+delta_current                               1.0           # First extruder stepper motor current
 
 extruder.E1.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
 
@@ -36,7 +36,7 @@ extruder.E1.retract_zlift_feedrate          6000          # Z-lift feedrate in m
 
 ### extruder two
 
-epsilon_current                             0.8           # Second extruder stepper motor current
+epsilon_current                             1.0           # Second extruder stepper motor current
 
 extruder.E2.enable                          true          # Whether to activate the extruder module at all. All configuration is ignored if false
 

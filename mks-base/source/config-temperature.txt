@@ -18,7 +18,12 @@ temperature_control.bed.designator           B               # Designator letter
 #temperature_control.bed.bang_bang           false           # Set to true to use bang bang control rather than PID
 #temperature_control.bed.hysteresis          2.0             # Set to the temperature in degrees C to use as hysteresis
 
+# PID configuration 
+# See http://smoothieware.org/temperaturecontrol#pid
 # auto-tune: M303 E0 S100 # http://smoothieware.org/temperaturecontrol-pid-autotuning
+temperature_control.bed.p_factor         336.3               # P ( proportional ) factor
+temperature_control.bed.i_factor         33.634              # I ( integral ) factor
+temperature_control.bed.d_factor         841                 # D ( derivative ) factor
 
 #################
 
@@ -42,9 +47,9 @@ temperature_control.E1.runaway_range                20   # How far from the set 
 # PID configuration 
 # See http://smoothieware.org/temperaturecontrol#pid
 # auto-tune: M303 E1 S250 # http://smoothieware.org/temperaturecontrol-pid-autotuning
-temperature_control.E1.p_factor         13.7            # P ( proportional ) factor
-temperature_control.E1.i_factor         0.097           # I ( integral ) factor
-temperature_control.E1.d_factor         24              # D ( derivative ) factor
+temperature_control.E1.p_factor         37.6            # P ( proportional ) factor
+temperature_control.E1.i_factor         1.614           # I ( integral ) factor
+temperature_control.E1.d_factor         219             # D ( derivative ) factor
 
 #################
 
@@ -68,9 +73,9 @@ temperature_control.E2.runaway_range                20   # How far from the set 
 # PID configuration 
 # See http://smoothieware.org/temperaturecontrol#pid
 # auto-tune: M303 E2 S250 # http://smoothieware.org/temperaturecontrol-pid-autotuning
-temperature_control.E2.p_factor         13.7            # P ( proportional ) factor
-temperature_control.E2.i_factor         0.097           # I ( integral ) factor
-temperature_control.E2.d_factor         24              # D ( derivative ) factor
+#temperature_control.E2.p_factor         X               # P ( proportional ) factor
+#temperature_control.E2.i_factor         X               # I ( integral ) factor
+#temperature_control.E2.d_factor         X               # D ( derivative ) factor
 
 #################
 
