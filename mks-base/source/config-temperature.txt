@@ -47,9 +47,9 @@ temperature_control.E1.runaway_range                20   # How far from the set 
 # PID configuration 
 # See http://smoothieware.org/temperaturecontrol#pid
 # auto-tune: M303 E1 S250 # http://smoothieware.org/temperaturecontrol-pid-autotuning
-temperature_control.E1.p_factor         37.6            # P ( proportional ) factor
-temperature_control.E1.i_factor         1.614           # I ( integral ) factor
-temperature_control.E1.d_factor         219             # D ( derivative ) factor
+temperature_control.E1.p_factor         41.1            # P ( proportional ) factor
+temperature_control.E1.i_factor         1.767           # I ( integral ) factor
+temperature_control.E1.d_factor         239             # D ( derivative ) factor
 
 #################
 
