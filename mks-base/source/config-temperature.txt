@@ -21,9 +21,9 @@ temperature_control.bed.designator           B               # Designator letter
 # PID configuration 
 # See http://smoothieware.org/temperaturecontrol#pid
 # auto-tune: M303 E0 S100 # http://smoothieware.org/temperaturecontrol-pid-autotuning
-temperature_control.bed.p_factor         336.3               # P ( proportional ) factor
-temperature_control.bed.i_factor         33.634              # I ( integral ) factor
-temperature_control.bed.d_factor         841                 # D ( derivative ) factor
+temperature_control.bed.p_factor         139.0               # P ( proportional ) factor
+temperature_control.bed.i_factor         11.537              # I ( integral ) factor
+temperature_control.bed.d_factor         419                 # D ( derivative ) factor
 
 #################
 
