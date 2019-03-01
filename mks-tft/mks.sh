@@ -27,13 +27,13 @@ readonly icon_conf=(
 #   button      icon_name                           icon_text
     "more       si-glyph-bolt                       MORE"   # in 'menu->tools'
 #
-#    "custom1    si-glyph-fire                       ABORT"   # in 'menu->more'    "custom1    si-glyph-fire                       ABORT"   # in 'menu->more'
-    "custom1    si-glyph-arrow-circle-rycycle       RESET"   # in 'menu->more'
+    "custom1    si-glyph-fire                       ABORT"   # in 'menu->more'    
+    # "custom1    si-glyph-arrow-circle-rycycle       RESET"   # in 'menu->more'
     "custom2    si-glyph-layout-2                   STOP"    # in 'menu->more'
     "custom3    si-glyph-circle-triangle-right      PLAY"    # in 'menu->more'
     "custom4    si-glyph-two-arrow-down             BED"     # in 'menu->more'
-    "custom5    si-glyph-thermometer                LO"      # in 'menu->more'
-    "custom6    si-glyph-thermometer                HI"      # in 'menu->more'
+    "custom5    si-glyph-thermometer                T@LO"    # in 'menu->more'
+    "custom6    si-glyph-thermometer                T@HI"    # in 'menu->more'
     "custom7    si-glyph-jump-page-up-down          LEVEL"   # in 'menu->more'
 #    
     "function1  si-glyph-turn-off                   X"       # in 'menu->home'

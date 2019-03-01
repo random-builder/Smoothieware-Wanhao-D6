@@ -70,7 +70,7 @@
 #the speed to retract filament(mm/min)
 >cfg_filament_unload_speed:3600
 #the lenght to retract filament(mm)
->cfg_filament_unload_length:450
+>cfg_filament_unload_length:500
 
 #It is the minimum temperature for filament change.
 It will auto heat up if the current temp doesn't reach the target.
@@ -111,8 +111,11 @@ It will auto heat up if the current temp doesn't reach the target.
 # mks issues G1 w/o F, forcing to use "last used rate"
 # while smoothieware uses same "last" for Z as for XY
 # workaround: keep z and xy to the same stable maximum speed
->cfg_leveling_z_speed:1200
->cfg_leveling_xy_speed:1200
+#>cfg_leveling_z_speed:1200
+#>cfg_leveling_xy_speed:1200
+# for marlin:
+>cfg_leveling_z_speed:360
+>cfg_leveling_xy_speed:3600
 
 #When the XY axis is moved manually, the height of the z-axis of the extruded Z axis from the origin (mm)
 #normally only needs to be reconfigured when the z axis is zero to the maximum under the smoothware firmware.
@@ -171,20 +174,20 @@ It will auto heat up if the current temp doesn't reach the target.
 >moreitem_pic_cnt:7
 
 #edit command for 1~7 "More" button, each command must be separated by semicolon ";"
-# reboot smoothieware
->moreitem_button1_cmd:reset;
+# emergency stop
+>moreitem_button1_cmd:M112;
 # print suspend
->moreitem_button2_cmd:G28;
+>moreitem_button2_cmd:;
 # print resume
->moreitem_button3_cmd:G28;
-# lower bed (15 mm/sec)
->moreitem_button4_cmd:G90;G1 Z160 F900;
-# temp/lo
+>moreitem_button3_cmd:;
+# lower plate
+>moreitem_button4_cmd:G90;G1 Z175 F4800;
+# set temp @ low
 >moreitem_button5_cmd:M104 S190;M140 S50;
-# temp/hi
+# set temp @ high
 >moreitem_button6_cmd:M104 S260;M140 S100;
 # auto level
->moreitem_button7_cmd:G28;
+>moreitem_button7_cmd:;
 
 #how many "More" button display on screen interface
 >morefunc_cnt:6

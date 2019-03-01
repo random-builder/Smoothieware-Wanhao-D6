@@ -34,11 +34,11 @@
 	</style>
 
 	<!-- link to external glyph icon -->
-	<use x="17" y="20" width="42" height="42" xlink:href="../../archive/glyph-iconset-master/sprite/sprite.svg#si-glyph-arrow-circle-rycycle" />
+	<use x="17" y="20" width="42" height="42" xlink:href="../../archive/glyph-iconset-master/sprite/sprite.svg#si-glyph-fire" />
 
 	<!-- insert single line of icon text -->
 	<text x="0" y="0" text-anchor="middle">
-		<tspan x="39" y="93" class="button-text">RESET</tspan>
+		<tspan x="39" y="93" class="button-text">ABORT</tspan>
 	</text>
 
 </svg>
