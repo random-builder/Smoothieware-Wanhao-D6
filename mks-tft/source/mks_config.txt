@@ -104,7 +104,7 @@ It will auto heat up if the current temp doesn't reach the target.
 >cfg_point4:010,010
 #
 # picture: "center/center"
->cfg_point5:100,100
+>cfg_point5:100,010
 
 #the travel speed of leveling(mm/min)
 # note: mks+smoothieware bug:
