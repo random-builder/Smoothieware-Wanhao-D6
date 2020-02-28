@@ -84,7 +84,7 @@ It will auto heat up if the current temp doesn't reach the target.
 >cfg_leveling_mode:0
 
 #the command of auto leveling (G29 is available for Marlin. While G32 is for Repetier and Smoothieware)
->cfg_auto_leveling_cmd:G32;
+>cfg_auto_leveling_cmd:;
 
 #the point number of manual leveling:(3,4,5 point available)
 >cfg_point_number:5
@@ -187,7 +187,7 @@ It will auto heat up if the current temp doesn't reach the target.
 # set temp @ high
 >moreitem_button6_cmd:M104 S260;M140 S100;
 # auto level
->moreitem_button7_cmd:;
+>moreitem_button7_cmd:G28;G29 P1;G29 P3.1;G29 P5 C0.75;G29 A;
 
 #how many "More" button display on screen interface
 >morefunc_cnt:6

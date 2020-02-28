@@ -166,13 +166,13 @@ echo "# erase archive"
 rm -r -f "$folder/archive"/*
 
 echo "# fetch mks-tft"
-wget -q "$mks_url" -O "$folder/mks-tft.zip"
+curl -L "$mks_url" -o "$folder/mks-tft.zip"
 
 echo "# extract mks-tft"
 unzip -q "$folder/mks-tft.zip" -d "$folder/archive/"
 
 echo "# fetch glyph-icons"
-wget -q "$glyph_url" -O "$folder/glyph-icons.zip"
+curl -L "$glyph_url" -o "$folder/glyph-icons.zip"
 
 echo "# extract glyph-icons"
 unzip -q "$folder/glyph-icons.zip" -d "$folder/archive/"
